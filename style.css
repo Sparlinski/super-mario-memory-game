@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(Images/Super_Mario_Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 75%;
+}
+
+
+@font-face {
+    font-family: gametex;
+    src: url(Fonts/Gamtex.woff);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header-logo {
+    width: 300px;
+    height: auto;
+    border: 2px solid red;
+}
+
+.mario-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: gametex;
+    text-align: center;
+    border: 2px solid red;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+    width: 550px;
+    border: 2px solid red;
+}
+
+.game-board,
+.game-info {
+    width: 500px;
+}
+
+.game-board {
+   height: 500px;
+   border: 2px solid red; 
+}
+
+.game-info {
+    height: 50px;
+    border: 2px solid red;
+}
