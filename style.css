@@ -38,38 +38,75 @@ body::after {
     font-style: normal;
 }
 
+/* LAYOUT */
+
 header {
     width: 25%;
-    min-width: 350px;
+    min-width: 250px;
 }
 
 .header-logo {
     width: 100%;
     border: 2px solid red;
+    margin: 1em 0 0 0;
 }
 
 .mario-logo {
     width: 100%;
 }
 
-h1 {
-    font-family: gametex;
-    text-align: center;
-    border: 2px solid red;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-main {
-    width: 35%;
-    height: 70%;
-    min-width: 380px;
+.game-board,
+.game-info {
+    width: 475px;
 }
 
 .game-board {
-   height: 90%;
+   height: 475px;
    border: 2px solid red; 
 }
 
 .game-info {
-    height: 10%;
+    height: 50px;    
     border: 2px solid red;
+}
+
+/* FONTS */
+
+h1 {
+    font-family: gametex;
+    font-weight: lighter;
+    text-align: center;
+}
+
+/* PHONE SCREEN */
+
+@media screen and (width: 390px) {
+    
+    header {
+        width: 340px;
+    }
+  
+    .game-board,
+    .game-info {
+        width: 340px;
+    }
+    
+    .game-board {
+       height: 500px;
+       border: 2px solid red; 
+    }
+    
+    .game-info {
+        height: 100px;    
+        border: 2px solid red;
+    }
+    
 }
