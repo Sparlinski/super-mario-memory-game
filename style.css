@@ -7,7 +7,6 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     height: 100vh;
     width: 100%;
@@ -41,14 +40,19 @@ body::after {
 /* LAYOUT */
 
 header {
-    width: 25%;
-    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    min-width: 180px;
+    border: 2px solid red;
+    margin: .5em 0 .5em 0;
+
 }
 
 .header-logo {
-    width: 100%;
-    border: 2px solid red;
-    margin: 1em 0 0 0;
+
 }
 
 .mario-logo {
@@ -60,53 +64,47 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    margin-bottom: .25em;
 }
 
-.game-board,
-.game-info {
-    width: 475px;
-}
 
 .game-board {
-   height: 475px;
-   border: 2px solid red; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    border: 2px solid red; 
 }
 
 .game-info {
-    height: 50px;    
-    border: 2px solid red;
+    height: 70px;
+    width: 500px;
+    border: 2px solid red; 
 }
+
+.back-image {
+    width: 100%;
+}
+
+.card-front {
+    display: none;
+}
+
+.card-back {
+    width: calc(100% / 4);
+    height: calc(100% / 4);
+    padding: 4px;
+}
+
+
 
 /* FONTS */
 
 h1 {
+    font-size: clamp(1rem, 2vw, 4rem);
     font-family: gametex;
     font-weight: lighter;
     text-align: center;
-}
-
-/* PHONE SCREEN */
-
-@media screen and (width: 390px) {
-    
-    header {
-        width: 340px;
-    }
-  
-    .game-board,
-    .game-info {
-        width: 340px;
-    }
-    
-    .game-board {
-       height: 500px;
-       border: 2px solid red; 
-    }
-    
-    .game-info {
-        height: 100px;    
-        border: 2px solid red;
-    }
-    
 }
