@@ -1,132 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Super Mario Memory Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> 
+  <title>Super Mario Memory Game</title>
 </head>
 <body>
-    <header>
-        <div class="header-logo">
-            <img class="mario-logo" src="Images/Super_Mario_Logo.png" alt="Super Mario Logo">
-        </div>
-        <h1>Memory Game</h1>
-    </header>
+  <section class="game-board">
 
-    <main>
-        <div class="game-board">
-            
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Boo.png" alt="Super Mario Boo character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Boo.png" alt="Super Mario Boo character">
-            </div>
+    <div class="memory-card" data-framework="mario">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Mario.png" alt="Super Mario">
+    </div>
+    <div class="memory-card" data-framework="mario">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Mario.png" alt="Super Mario">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Coin - Gold.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Coin - Gold.png" alt="Super Mario Blooper character">
-            </div>
+    <div class="memory-card" data-framework="yoshi-egg">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Yoshi Egg 3D - Green.png" alt="Yoshi egg">
+    </div>
+    <div class="memory-card" data-framework="yoshi-egg">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Yoshi Egg 3D - Green.png" alt="Yoshi egg">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Goomba.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Goomba.png" alt="Super Mario Blooper character">
-            </div>
+    <div class="memory-card" data-framework="goomba">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Goomba.png" alt="Goomba">
+    </div>
+    <div class="memory-card" data-framework="goomba">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Goomba.png" alt="Goomba">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Mario.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Mario.png" alt="Super Mario Blooper character">
-            </div>
+    <div class="memory-card" data-framework="mushroom">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Mushroom - 1-Up.png" alt="1up mushroom">
+    </div>
+    <div class="memory-card" data-framework="mushroom">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Mushroom - 1-Up.png" alt="1up mushroom">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Mushroom - Life.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Mushroom - Life.png" alt="Super Mario Blooper character">
-            </div>
+    <div class="memory-card" data-framework="green-shell">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Shell - Green.png" alt="Green shell">
+    </div>
+    <div class="memory-card" data-framework="green-shell">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Shell - Green.png" alt="Green shell">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Shell - Green.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Shell - Green.png" alt="Super Mario Blooper character">
-            </div>
-            
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Star.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Star.png" alt="Super Mario Blooper character">
-            </div>
+    <div class="memory-card" data-framework="gold-coin">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Coin - Gold.png" alt="Gold coin">
+    </div>
+    <div class="memory-card" data-framework="gold-coin">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Coin - Gold.png" alt="Gold coin">
+    </div>
 
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Yoshi Egg 3D - Green.png" alt="Super Mario Blooper character">
-            </div>
-            <div class="card-back">
-                <img class="back-image" src="Images/Game_Assets/Block - Question 2D.png" alt="Super Mario question mark block">
-            </div>
-            <div class="card-front">
-                <img class="card-front" src="Images/Game_Assets/Yoshi Egg 3D - Green.png" alt="Super Mario Blooper character">
-            </div>
-        </div>
-    </main>
+    <div class="memory-card" data-framework="cloud-flower">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Flower - Cloud.png" alt="Cloud flower">
+    </div>
+    <div class="memory-card" data-framework="cloud-flower">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Flower - Cloud.png" alt="Cloud flower">
+    </div>
+
+    <div class="memory-card" data-framework="bob-omb">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Bob-omb.png" alt="Bob-omb">
+    </div>
+    <div class="memory-card" data-framework="bob-omb">
+      <img class="back-face" src="Images/Game_Assets/Block - Question 2D.png" alt="Question mark block">
+      <img class="front-face" src="Images/Game_Assets/Bob-omb.png" alt="Bob-omb">
+    </div>
+
     
-    <footer>
-        <div class="game-info"></div>
-    </footer>
-
+  </section>
 </body>
 <script src="script.js"></script>
 </html>

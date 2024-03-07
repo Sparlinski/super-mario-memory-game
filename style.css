@@ -1,110 +1,82 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
+  display: flex;
+  height: 100vh;
+} 
 
 body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    background-image: url(Images/Super_Mario_Background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 75%;
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: url(Images/Super_Mario_Background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 75%;
 }
-
-
-@font-face {
-    font-family: gametex;
-    src: url(Fonts/Gamtex.woff);
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* LAYOUT */
-
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    min-width: 180px;
-    border: 2px solid red;
-    margin: .5em 0 .5em 0;
-
-}
-
-.header-logo {
-
-}
-
-.mario-logo {
-    width: 100%;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: .25em;
-}
-
 
 .game-board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 500px;
-    height: 500px;
-    border: 2px solid red; 
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 500px;
+  padding: .25em;
+  margin: auto;
+  border-radius: 7.5px;
+  perspective: 1000px;
+  border: 2px solid black;
 }
 
-.game-info {
-    height: 70px;
-    width: 500px;
-    border: 2px solid red; 
+.memory-card {
+  position: relative;
+  width: calc(25% - .5em);
+  height: calc(25% - .5em);
+  margin: .25em;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
-.back-image {
-    width: 100%;
+.memory-card:active {
+  transform: scale(.97);
+  transition: transform .2s;
 }
 
-.card-front {
-    display: none;
+.memory-card.flip {
+  transform: rotateY(180deg);
 }
 
-.card-back {
-    width: calc(100% / 4);
-    height: calc(100% / 4);
-    padding: 4px;
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: .25em;
+  border-radius: 5px;
+  background-color: white;
+  backface-visibility: hidden;
+}
+/*
+.back-face {
+  display: none;
+}
+*/
+.front-face {
+  transform: rotateY(180deg);
+  border: 2px solid black;
 }
 
-
-
-/* FONTS */
-
-h1 {
-    font-size: clamp(1rem, 2vw, 4rem);
-    font-family: gametex;
-    font-weight: lighter;
-    text-align: center;
+.back-face {
+  padding: 0;
 }
