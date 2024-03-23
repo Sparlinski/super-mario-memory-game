@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.memory-card');
 
+
 let flippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -13,12 +14,10 @@ function flipCard() {
   if (!flippedCard) {
     flippedCard = true;
     firstCard = this;
-
     return;
   }
 
     secondCard = this;
-
     checkMatch();
 }
 

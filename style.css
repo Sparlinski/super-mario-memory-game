@@ -26,6 +26,7 @@ body::after {
   opacity: 75%;
 }
 
+
 .game-board {
   display: flex;
   flex-wrap: wrap;
@@ -67,11 +68,7 @@ body::after {
   background-color: white;
   backface-visibility: hidden;
 }
-/*
-.back-face {
-  display: none;
-}
-*/
+
 .front-face {
   transform: rotateY(180deg);
   border: 2px solid black;
