@@ -7,82 +7,97 @@
   <title>Super Mario Memory Game</title>
 </head>
 <body>
-    <section class="game-board">
 
-      <div class="memory-card" data-framework="mario">
+  <div id="start-screen"></div>
+    <button id="start-game" type="button">START GAME</button>
+  </div>
+  <section id="game-area">
+    <section id="game-board">
+
+      <div class="game-cards" data-framework="mario">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Mario.png" alt="Super Mario">
       </div>
-      <div class="memory-card" data-framework="mario">
+      <div class="game-cards" data-framework="mario">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Mario.png" alt="Super Mario">
       </div>
 
-      <div class="memory-card" data-framework="yoshi-egg">
+      <div class="game-cards" data-framework="yoshi-egg">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Yoshi Egg 3D - Green.png" alt="Yoshi egg">
       </div>
-      <div class="memory-card" data-framework="yoshi-egg">
+      <div class="game-cards" data-framework="yoshi-egg">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Yoshi Egg 3D - Green.png" alt="Yoshi egg">
       </div>
 
-      <div class="memory-card" data-framework="goomba">
+      <div class="game-cards" data-framework="goomba">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Goomba.png" alt="Goomba">
       </div>
-      <div class="memory-card" data-framework="goomba">
+      <div class="game-cards" data-framework="goomba">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Goomba.png" alt="Goomba">
       </div>
 
-      <div class="memory-card" data-framework="mushroom">
+      <div class="game-cards" data-framework="mushroom">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
-        <img class="front-face" src="images/Mushroom - 1-Up.png" alt="1up mushroom">
+        <img class="front-face" src="images/Cheep Cheep.png" alt="1up mushroom">
       </div>
-      <div class="memory-card" data-framework="mushroom">
+      <div class="game-cards" data-framework="mushroom">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
-        <img class="front-face" src="images/Mushroom - 1-Up.png" alt="1up mushroom">
+        <img class="front-face" src="images/Cheep Cheep.png" alt="1up mushroom">
       </div>
 
-      <div class="memory-card" data-framework="green-shell">
+      <div class="game-cards" data-framework="green-shell">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Shell - Green.png" alt="Green shell">
       </div>
-      <div class="memory-card" data-framework="green-shell">
+      <div class="game-cards" data-framework="green-shell">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Shell - Green.png" alt="Green shell">
       </div>
 
-      <div class="memory-card" data-framework="gold-coin">
+      <div class="game-cards" data-framework="gold-coin">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
-        <img class="front-face" src="images/Coin - Gold.png" alt="Gold coin">
+        <img class="front-face" src="images/Star.png" alt="Gold coin">
       </div>
-      <div class="memory-card" data-framework="gold-coin">
+      <div class="game-cards" data-framework="gold-coin">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
-        <img class="front-face" src="images/Coin - Gold.png" alt="Gold coin">
+        <img class="front-face" src="images/Star.png" alt="Gold coin">
       </div>
 
-      <div class="memory-card" data-framework="cloud-flower">
+      <div class="game-cards" data-framework="cloud-flower">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Flower - Cloud.png" alt="Cloud flower">
       </div>
-      <div class="memory-card" data-framework="cloud-flower">
+      <div class="game-cards" data-framework="cloud-flower">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Flower - Cloud.png" alt="Cloud flower">
       </div>
 
-      <div class="memory-card" data-framework="bob-omb">
+      <div class="game-cards" data-framework="bob-omb">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Bob-omb.png" alt="Bomb-omb">
       </div>
-      <div class="memory-card" data-framework="bob-omb">
+      <div class="game-cards" data-framework="bob-omb">
         <img class="back-face" src="images/Block - Question 2D.png" alt="Question mark block">
         <img class="front-face" src="images/Bob-omb.png" alt="Bob-omb">
       </div>
-
       
     </section>
+    <div id="game-timer">
+      <div id="timer">03:00</div>
+    </div>
+    <div id="win-screen">
+      <p>YOU WIN!</p>
+    </div>
+    <div id="lose-screen">
+      <p>YOU LOSE!</p>
+    </div>
+    <div id="lifes"></div>
+  </section>
 </body>
 <script src="script.js"></script>
 </html>
