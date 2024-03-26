@@ -4,6 +4,10 @@ const startScreen = document.getElementById('start-screen');
 const startGame = document.getElementById('start-game');
 const loseScreen = document.getElementById('lose-screen');
 const lifes = document.getElementById('lifes');
+const gameBoard = document.getElementById('game-board');
+const loseMessage = document.getElementById('lose-message');
+const restartGame = document.getElementById('restart-game');
+const playAgain = document.getElementById('play-again');
 
 // START GAME FUNCTION
 startGame.addEventListener('click', function() {
@@ -26,7 +30,7 @@ startGame.addEventListener('click', startTimer);
 function startTimer() {
   if (!isRunning) {
     isRunning = true;
-    timer = setInterval(updateTimer, 1000);
+    timer = setInterval(updateTimer, 1);
   }
 
   if (minutes == 0 & seconds == 0) {
@@ -111,7 +115,6 @@ function resetBoard() {
 
 
 // LIFE FUNCTION
-
 let array = [
   'images/Mushroom - 1-Up.png',
   'images/Mushroom - 1-Up.png',
@@ -157,14 +160,29 @@ function winGame() {
 // LOSE GAME FUNCTION
 function gameOver() {
   loseScreen.style.display = 'flex';
+  gameBoard.style.display = 'none';
+  startScreen.style.display = 'none';
   stopTimer();
+  endGameMsg();
+};
+
+function endGameMsg() {
+  setTimeout(() => {
+    loseMessage.style.display = 'flex';
+  }, 3500);
+  newGame();
+};
+
+function newGame() {
+  restartGame.addEventListener('click', function() {
+    location.reload();
+  });
 };
 
 function stopTimer() {
   clearInterval(timer);
   isRunning = false;
 };
-
 
 // SHUFFLE DECK FUNCTION
 (function shuffle() {
@@ -173,6 +191,3 @@ function stopTimer() {
     card.style.order = randomPos;
   });
 }());
-
-
-

@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
 } 
 
 body::after {
@@ -29,13 +30,32 @@ body::after {
   opacity: 75%;
 }
 
-/*START SCREEN*/
+@font-face {
+  font-family: 'gamtex';
+  src: url(fonts/Gamtex.woff);
+}
+
+
 
 #start-screen {
   display: flex;
   z-index: 1;
   height: 100vh;
   width: 100%;
+}
+
+#start-game {
+  z-index: 2;
+  width: 500px;
+  height: 150px;
+  font-family: 'gamtex';
+  font-size: 3rem;
+  border-radius: 25px;
+  border: solid 5px black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-top: 25%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 #start-screen::after {
@@ -48,19 +68,31 @@ body::after {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-image: url(images/super-mario-maker-on-yellow-background-ybfs33k1xhwgdrtm.jpg);
+  background-image: url(images/mario-startscreen.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#start-game {
-  z-index: 1;
+
+/*GAME AREA*/
+#game-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 500px;
+  height: 300px;
 }
 
-#game-area {
+.logo {
   width: 100%;
-  height: 100vh;
+}
+
+h1 {
+  font-family: 'gamtex';
+  font-size: 2.5rem;
+  font-weight: lighter;
+  margin-top: .25em;
 }
 
 #game-board {
@@ -71,7 +103,9 @@ body::after {
   padding: .25em;
   border-radius: 7.5px;
   perspective: 1000px;
-  border: 2px solid black;
+  border: 3px solid black;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 17px 16px 24px -16px rgba(0, 0, 0, 1);
 }
 
 .game-cards {
@@ -106,13 +140,57 @@ body::after {
 
 .front-face {
   transform: rotateY(180deg);
+  box-shadow: 9px 9px 15px -14px rgba(0, 0, 0, 1);
   border: 2px solid black;
 }
 
 .back-face {
   padding: 0;
+  box-shadow: 9px 9px 15px -14px rgba(0, 0, 0, 1);
 }
 
+/*GAME INFO*/
+
+#game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  height: 150px;
+  border-radius: 7.5px;
+  perspective: 1000px;
+  border: 3px solid black;
+  background-color: white;
+  margin-top: 1em;
+}
+
+.lives-left {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+}
+
+#game-timer {
+  width: 100%;
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-family: 'gamtex';
+  font-weight: lighter;
+  font-size: 3rem;
+  padding-top: .15rem;
+}
+
+/*WIN SCREENS*/
 #win-screen {
   display: none;
   justify-content: center;
@@ -123,12 +201,76 @@ body::after {
   margin-top: 50px;
 }
 
+#win-screen::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-image: url(images/mario-winscreen.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*LOSE SCREEN*/
 #lose-screen {
   display: none;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 200px;
-  background-color: white;
-  margin-top: 50px;
+  text-align: center;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  font-family: 'gamtex';
+  color: white;
+}
+
+#lose-screen::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-image: url(images/bowser-endscreen.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#lose-message {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.75);
+  border: 3px solid white;
+  margin-bottom: 10%;
+  border-radius: 50px;
+}
+
+#restart-game {
+  font-family: 'gamtex';
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.boo {
+  width: 200px;
+}
+
+p {
+  font-size: 4rem;
 }
