@@ -8,11 +8,16 @@ const gameBoard = document.getElementById('game-board');
 const loseMessage = document.getElementById('lose-message');
 const restartGame = document.getElementById('restart-game');
 const playAgain = document.getElementById('play-again');
+const gameInfo = document.getElementById('game-info');
+const gameTitle = document.getElementById('game-title');
+const winMessage = document.getElementById('win-message');
 
 // START GAME FUNCTION
 startGame.addEventListener('click', function() {
   startScreen.style.display = 'none';
-
+  gameTitle.style.display = 'flex';
+  gameInfo.style.display = 'flex';
+  gameBoard.style.display = 'flex';
 });
 
 // TIMER FUNCTION
@@ -30,7 +35,7 @@ startGame.addEventListener('click', startTimer);
 function startTimer() {
   if (!isRunning) {
     isRunning = true;
-    timer = setInterval(updateTimer, 1);
+    timer = setInterval(updateTimer, 1000);
   }
 
   if (minutes == 0 & seconds == 0) {
@@ -155,13 +160,34 @@ function checkWin() {
 
 function winGame() {
   winScreen.style.display = 'flex';
+  gameBoard.style.display = 'none';
+  startScreen.style.display = 'none';
+  gameInfo.style.display = 'none';
+  gameTitle.style.display = 'none';
+  winGameMsg();
 };
+
+function winGameMsg() {
+  setTimeout(() => {
+    winMessage.style.display = 'flex';
+  }, 5000);
+  playAgn();
+};
+
+function playAgn() {
+  playAgain.addEventListener('click', function() {
+    location.reload();
+  });
+};
+
 
 // LOSE GAME FUNCTION
 function gameOver() {
   loseScreen.style.display = 'flex';
   gameBoard.style.display = 'none';
   startScreen.style.display = 'none';
+  gameInfo.style.display = 'none';
+  gameTitle.style.display = 'none';
   stopTimer();
   endGameMsg();
 };

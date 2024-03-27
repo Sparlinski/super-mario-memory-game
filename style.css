@@ -11,7 +11,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-} 
+}
 
 body::after {
   content: '';
@@ -35,13 +35,23 @@ body::after {
   src: url(fonts/Gamtex.woff);
 }
 
-
-
+/*START SCREEN*/
 #start-screen {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
   z-index: 1;
   height: 100vh;
   width: 100%;
+  font-family: 'gamtex';
+  color: white;
+}
+
+.start-img {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100vh;
 }
 
 #start-game {
@@ -53,31 +63,13 @@ body::after {
   border-radius: 25px;
   border: solid 5px black;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  margin-top: 25%;
   margin-left: 25%;
   margin-right: 25%;
 }
 
-#start-screen::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-image: url(images/mario-startscreen.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
 /*GAME AREA*/
 #game-title {
-  display: flex;
+  display: none;
   flex-direction: column;
   text-align: center;
   width: 500px;
@@ -96,15 +88,15 @@ h1 {
 }
 
 #game-board {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
-  height: 500px;
-  width: 500px;
+  min-height: 500px;
+  min-width: 500px;
   padding: .25em;
   border-radius: 7.5px;
   perspective: 1000px;
   border: 3px solid black;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 50%);
   box-shadow: 17px 16px 24px -16px rgba(0, 0, 0, 1);
 }
 
@@ -150,9 +142,8 @@ h1 {
 }
 
 /*GAME INFO*/
-
 #game-info {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -161,23 +152,33 @@ h1 {
   border-radius: 7.5px;
   perspective: 1000px;
   border: 3px solid black;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 50%);
   margin-top: 1em;
+}
+
+#lifes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .lives-left {
   width: 80px;
   height: 80px;
-  display: inline-block;
   margin: 5px;
   text-align: center;
   line-height: 50px;
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
 }
 
+.divider {
+  border: 1px solid rgba(0, 0, 0, 50%);
+  width: 100%;
+}
+
 #game-timer {
   width: 100%;
-  border-top: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,12 +194,16 @@ h1 {
 /*WIN SCREENS*/
 #win-screen {
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 200px;
+  text-align: center;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  font-family: 'gamtex';
+  color: white;
   background-color: white;
-  margin-top: 50px;
 }
 
 #win-screen::after {
@@ -210,11 +215,51 @@ h1 {
   right: 0;
   height: 100%;
   width: 100%;
-  z-index: 1;
-  background-image: url(images/mario-winscreen.jpg);
+  z-index: -1;
+  background-image: url(images/mario-start.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.you-win {
+  font-size: 10rem;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+  animation: animate .5s linear infinite; 
+}  
+ 
+@keyframes animate { 
+  0%{ 
+    opacity: 0; 
+  } 
+  50%{ 
+    opacity: .75; 
+  } 
+  100%{ 
+    opacity: 0; 
+  }
+} 
+
+#win-message {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 700px;
+  height: 550px;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.75);
+  border: 3px solid white;
+  border-radius: 50px;
+}
+
+#play-again {
+  font-family: 'gamtex';
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 15px;
 }
 
 /*LOSE SCREEN*/
@@ -230,20 +275,10 @@ h1 {
   color: white;
 }
 
-#lose-screen::after {
-  content: '';
+.bowser {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-image: url(images/bowser-endscreen.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  min-width: 100%;
+  min-height: 100vh; 
 }
 
 #lose-message {
@@ -256,7 +291,6 @@ h1 {
   z-index: 2;
   background-color: rgba(0,0,0,0.75);
   border: 3px solid white;
-  margin-bottom: 10%;
   border-radius: 50px;
 }
 
@@ -274,3 +308,223 @@ h1 {
 p {
   font-size: 4rem;
 }
+
+@media only screen and (max-width: 390px) { 
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding:
+  }
+
+  /*START SCREEN*/
+  .start-img {
+    display: none;
+  }
+
+  #start-screen {
+    align-items: flex-start;
+  }
+
+  #start-screen::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(images/mario-startscreen.jpg);
+    background-size: 400%;
+    background-repeat: no-repeat;
+    background-position-x: 70%;
+  }
+
+  #start-game {
+    z-index: 2;
+    width: 350px;
+    height: 150px;
+    font-family: 'gamtex';
+    font-size: 3rem;
+    border-radius: 25px;
+    border: solid 5px black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  /*GAME AREA*/
+  #game-title {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 350px;
+    height: 200px;
+  }
+
+  .logo {
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  h1 {
+    font-family: 'gamtex';
+    font-size: 2rem;
+    font-weight: lighter;
+    margin-top: .25em;
+    margin-bottom: .5em;
+  }
+
+  #game-board {
+    display: none;
+    flex-wrap: wrap;
+    height: 350px;
+    width: 350px;
+    padding: .25em;
+    border-radius: 7.5px;
+    perspective: 1000px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 50%);
+    box-shadow: 17px 16px 24px -16px rgba(0, 0, 0, 1);
+    margin-top: 1.5rem;
+  }
+
+  /*GAME INFO*/
+  #game-info {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 125px;
+    border-radius: 7.5px;
+    perspective: 1000px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 50%);
+    margin-bottom: 3em;
+  }
+
+  .lives-left {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+  }
+
+  /*LOSE SCREEN*/
+
+  .bowser {
+    display: none; 
+  }
+
+  #lose-screen::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(images/bowser-endscreen.jpg);
+    background-size: 400%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #lose-message {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.75);
+    border: 3px solid white;
+    border-radius: 25px;
+  }
+
+  #restart-game {
+    font-family: 'gamtex';
+    font-size: 3rem;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .boo {
+    width: 200px;
+  }
+
+  p {
+    font-size: 3rem;
+  }
+  
+  /*WIN SCREEN*/
+  #win-screen {
+    justify-content: flex-start;
+  }
+
+  #win-screen::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-image: url(images/mario-win.jpg);
+    background-size: 180%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position-x: 96%;
+  }
+  
+  #win-message {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 550px;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.75);
+    border: 3px solid rgb(177, 1, 1);
+    border-radius: 25px;
+  }
+  
+  #play-again {
+    font-family: 'gamtex';
+    font-size: 3rem;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .paper-mario {
+    width: 60%;
+  }
+
+  .you-win {
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+    z-index: 2;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+}
+
+
