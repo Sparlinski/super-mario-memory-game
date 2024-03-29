@@ -10,6 +10,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
 }
 
@@ -352,20 +353,16 @@ h1 {
 }
 
 p {
-  color: #000000;
+  color: #ffffff;
   font-size: clamp(2.5rem, 3vw, 4rem);
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   
-  html {
-  height: -webkit-fill-available;
-  }
-
   body {
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
-    height: -webkit-fill-available;
   }
 
   /*START SCREEN*/
@@ -394,18 +391,14 @@ p {
     width: 90%;
     margin-top: 1em;
   }
+
   .logo {
-    width: 80%;
+    width: 50%;
     margin: auto;
   }
 
   h1 {
-    font-size: 2rem;
-    margin-top: .5em;
-    border: 2px solid #000000;
-    border-radius: 7.5px;
-    padding: .25em;
-    background-color: #ffffff80;
+    display: none;
   }
   
   #game-board {
@@ -491,7 +484,7 @@ p {
   }
   
   p {
-    color: #000000;
+    color: #ffffff;
     font-size: 2.5rem;
   }
 }
