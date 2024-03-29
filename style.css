@@ -221,8 +221,7 @@ h1 {
   height: 100vh;
   width: 100%;
   font-family: 'gamtex';
-  color: white;
-  background-color: white;
+  color: #ffffff;
 }
 
 #win-screen::after {
@@ -352,5 +351,130 @@ h1 {
 
 p {
   font-size: clamp(2.5rem, 3vw, 4rem);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+  /*START SCREEN*/
+  #start-screen {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #start-screen::after {
+    background-position-x: 68%;
+  }
+  
+  #start-game {
+    width: 25%;
+    height: 15%;
+    border-radius: 25px;
+    border: solid 3px #000000;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1em;
+  }
+
+  /*GAME AREA*/
+  #game-title {
+    width: 95%;
+    margin-top: 1em;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-top: .5em;
+    border: 2px solid #000000;
+    border-radius: 7.5px;
+    padding: .5em;
+    background-color: #ffffff80;
+  }
+  
+  #game-board {
+    aspect-ratio: 1 / 1;
+    width: 95%;
+    border: 2.5px solid #000000;
+    background-color: #ffffff80;
+    margin-top: 1em;
+  }
+
+  /*GAME INFO*/
+  #game-info {
+    width: 95%;
+    height: 15%;
+    perspective: 1000px;
+    border: 2.5px solid #000000;
+    background-color: #ffffff80;
+    margin-top: 1em;
+    border-radius: 7.5px;
+  }
+
+  .lives-left {
+    aspect-ratio: 1 / 1;
+    width: 17%;
+    margin: 5px;
+  }
+
+  .divider {
+    border: 1px solid #000000;
+    width: 100%;
+  }
+
+  #timer {
+    font-size: 3rem;
+  }
+
+  /*WIN SCREEN*/
+  .you-win {
+    z-index: 2;
+    font-size: 4rem;
+    margin-top: 2em;
+    color: #ffffff;
+  }
+
+  #win-message {
+    width: 90%;
+    height: 60%;
+    background-color: #000000bf;
+    border: 3px solid #ffffff;
+    border-radius: 25px;
+    margin-top: 1em;
+  }
+  
+  .paper-mario {
+    width: 70%;
+  }
+  
+  #play-again {
+    font-size: 2.25rem;
+    padding: 1rem;
+    border-radius: 15px;
+    color: #000000;
+  }
+
+  /*LOSE SCREEN*/
+  #lose-screen {
+    color: #ffffff;
+  }
+  #lose-message {
+    width: 95%;
+    background-color: #000000bf;
+    border: 3px solid #ffffff;
+    border-radius: 25px;
+  }
+  
+  #restart-game {
+    font-family: 'gamtex';
+    font-size: 3rem;
+    width: 90%;
+  }
+  
+  .boo {
+    width: 55%;
+  }
+  
+  p {
+    font-size: 2.5rem;
+  }
 }
 
