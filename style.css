@@ -395,6 +395,8 @@ p {
   #game-board {
     aspect-ratio: 1 / 1;
     width: 90%;
+    min-width: 325px;
+    min-width: 325px;
     border: 2.5px solid #000000;
     background-color: #ffffff80;
     margin-top: 1em;
@@ -404,6 +406,7 @@ p {
   #game-info {
     width: 90%;
     height: 15%;
+    min-height: 130px;
     perspective: 1000px;
     border: 2.5px solid #000000;
     background-color: #ffffff80;
@@ -438,6 +441,7 @@ p {
   #win-message {
     width: 90%;
     height: 60%;
+    min-height: 400px;
     background-color: #000000bf;
     border: 3px solid #ffffff;
     border-radius: 25px;
@@ -445,10 +449,12 @@ p {
   }
   
   .paper-mario {
-    width: 70%;
+    width: 50%;
   }
   
   #play-again {
+    width: 80%;
+    height: 15%;
     font-size: 2.25rem;
     padding: 1rem;
     border-radius: 15px;
