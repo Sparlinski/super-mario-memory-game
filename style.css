@@ -352,12 +352,13 @@ h1 {
 }
 
 p {
+  color: #000000;
   font-size: clamp(2.5rem, 3vw, 4rem);
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   body {
-    height: 100dvh;
+    height: 100svh;
     overflow: hidden;
   }
 
@@ -484,6 +485,7 @@ p {
   }
   
   p {
+    color: #000000;
     font-size: 2.5rem;
   }
 }
