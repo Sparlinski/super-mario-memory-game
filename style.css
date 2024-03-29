@@ -20,7 +20,7 @@ body::after {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   z-index: -1;
   background-image: url(images/Super_Mario_Background.jpg);
@@ -74,6 +74,7 @@ body::after {
   font-size: 3rem;
   border-radius: 25px;
   border: solid 5px #000000;
+  color: #000000;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   margin-left: 20%;
   margin-right: 20%;
@@ -357,6 +358,7 @@ p {
   body {
     height: 100vh;
     width: 100%;
+    overflow: hidden;
   }
 
   /*START SCREEN*/
@@ -370,6 +372,7 @@ p {
   }
   
   #start-game {
+    position: fixed;
     width: 25%;
     height: 15%;
     border-radius: 25px;
@@ -381,22 +384,26 @@ p {
 
   /*GAME AREA*/
   #game-title {
-    width: 95%;
+    width: 90%;
     margin-top: 1em;
   }
-  
+  .logo {
+    width: 80%;
+    margin: auto;
+  }
+
   h1 {
     font-size: 2rem;
     margin-top: .5em;
     border: 2px solid #000000;
     border-radius: 7.5px;
-    padding: .5em;
+    padding: .25em;
     background-color: #ffffff80;
   }
   
   #game-board {
     aspect-ratio: 1 / 1;
-    width: 95%;
+    width: 90%;
     border: 2.5px solid #000000;
     background-color: #ffffff80;
     margin-top: 1em;
@@ -404,7 +411,7 @@ p {
 
   /*GAME INFO*/
   #game-info {
-    width: 95%;
+    width: 90%;
     height: 15%;
     perspective: 1000px;
     border: 2.5px solid #000000;
@@ -414,8 +421,7 @@ p {
   }
 
   .lives-left {
-    aspect-ratio: 1 / 1;
-    width: 17%;
+    width: 15%;
     margin: 5px;
   }
 
