@@ -177,20 +177,11 @@ h1 {
   border-radius: 7.5px;
 }
 
-#lifes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
 .lives-left {
   aspect-ratio: 1 / 1;
   width: 17%;
   margin: 5px;
   text-align: center;
-  line-height: 50px;
   filter: drop-shadow(5px 5px 5px #0000004d);
 }
 
@@ -381,9 +372,9 @@ p {
     height: 15%;
     border-radius: 25px;
     border: solid 3px #000000;
+    margin-top: 1em;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 1em;
   }
 
   /*GAME AREA*/
@@ -393,7 +384,7 @@ p {
   }
 
   .logo {
-    width: 50%;
+    width: 80%;
     margin: auto;
   }
 
@@ -416,18 +407,20 @@ p {
     perspective: 1000px;
     border: 2.5px solid #000000;
     background-color: #ffffff80;
-    margin-top: 1em;
     border-radius: 7.5px;
   }
 
-  .lives-left {
-    width: 15%;
-    margin: 5px;
+  #lifes {
+    width: 100%;
   }
 
   .divider {
     border: 1px solid #000000;
     width: 100%;
+  }
+
+  #game-timer {
+    height: 40%;
   }
 
   #timer {
@@ -438,7 +431,7 @@ p {
   .you-win {
     z-index: 2;
     font-size: 4rem;
-    margin-top: 2em;
+    margin-top: 1em;
     color: #ffffff;
   }
 

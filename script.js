@@ -217,3 +217,5 @@ function stopTimer() {
     card.style.order = randomPos;
   });
 }());
+
+winGame();
