@@ -45,7 +45,7 @@ body::after {
   height: 100vh;
   width: 100%;
   font-family: 'gamtex';
-  color: white;
+  color: #ffffff;
 }
 
 #start-screen::after {
@@ -73,7 +73,7 @@ body::after {
   font-family: 'gamtex';
   font-size: 3rem;
   border-radius: 25px;
-  border: solid 5px black;
+  border: solid 5px #000000;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   margin-left: 20%;
   margin-right: 20%;
@@ -110,8 +110,8 @@ h1 {
   padding: .25em;
   border-radius: 7.5px;
   perspective: 1000px;
-  border: 3px solid black;
-  background-color: rgba(255, 255, 255, 50%);
+  border: 3px solid #000000;
+  background-color: #ffffff80;
   box-shadow: 17px 16px 24px -16px rgba(0, 0, 0, 1);
   margin-top: 1em;
 }
@@ -142,14 +142,14 @@ h1 {
   height: 100%;
   padding: .25em;
   border-radius: 5px;
-  background-color: white;
+  background-color: #ffffff;
   backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
   box-shadow: 9px 9px 15px -14px rgba(0, 0, 0, 1);
-  border: 2px solid black;
+  border: 2px solid #000000;
 }
 
 .back-face {
@@ -168,8 +168,8 @@ h1 {
   min-width: 325px;
   min-height: 100px;
   perspective: 1000px;
-  border: 3px solid black;
-  background-color: rgba(255, 255, 255, 50%);
+  border: 3px solid #000000;
+  background-color: #ffffff80;
   margin-top: 1em;
   border-radius: 7.5px;
 }
@@ -188,11 +188,11 @@ h1 {
   margin: 5px;
   text-align: center;
   line-height: 50px;
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+  filter: drop-shadow(5px 5px 5px #0000004d);
 }
 
 .divider {
-  border: 1px solid rgba(0, 0, 0, 50%);
+  border: 1px solid #00000080;
   width: 100%;
 }
 
@@ -244,7 +244,7 @@ h1 {
   z-index: 2;
   font-size: clamp(6rem, 10vw, 10rem);
   margin-top: .5em;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   -webkit-text-stroke: 2px rgb(0, 0, 0);
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
   animation: animate .5s linear infinite; 
@@ -271,8 +271,8 @@ h1 {
   height: 60%;
   min-width: 350px;
   z-index: 2;
-  background-color: rgba(0,0,0,0.75);
-  border: 3px solid white;
+  background-color: #000000bf;
+  border: 3px solid #ffffff;
   border-radius: min(25px);
   padding: .5em;
   margin-top: .25em;
@@ -302,7 +302,7 @@ h1 {
   height: 100vh;
   width: 100%;
   font-family: 'gamtex';
-  color: white;
+  color: #ffffff;
 }
 
 #lose-screen::after {
@@ -331,8 +331,8 @@ h1 {
   min-width: 325px;
   min-height: 450px;
   z-index: 2;
-  background-color: rgba(0,0,0,0.75);
-  border: 3px solid white;
+  background-color: #000000bf;
+  border: 3px solid #ffffff;
   border-radius: 50px;
 }
 
@@ -353,7 +353,11 @@ p {
   font-size: clamp(2.5rem, 3vw, 4rem);
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    height: 100vh;
+    width: 100%;
+  }
 
   /*START SCREEN*/
   #start-screen {
