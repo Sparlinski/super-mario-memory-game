@@ -4,18 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --doc-height: 100%;
- }
- 
- html,
- body {
-  padding: 0;
-  margin: 0;
-  height: 100vh; /* fallback for Js load */
-  height: var(--doc-height);
- }
-
 body {
   display: flex;
   flex-direction: column;
@@ -369,9 +357,15 @@ p {
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+  
+  html {
+  height: -webkit-fill-available;
+  }
+
   body {
-    height: 100svh;
+    height: 100vh;
     overflow: hidden;
+    height: -webkit-fill-available;
   }
 
   /*START SCREEN*/

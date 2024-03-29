@@ -12,15 +12,6 @@ const gameInfo = document.getElementById('game-info');
 const gameTitle = document.getElementById('game-title');
 const winMessage = document.getElementById('win-message');
 
-const documentHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
-};
-
-window.addEventListener('resize', documentHeight);
-documentHeight();
-
-
 // START GAME FUNCTION
 startGame.addEventListener('click', function() {
   startScreen.style.display = 'none';
